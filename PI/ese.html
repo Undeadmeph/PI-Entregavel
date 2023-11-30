@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Escala de sonolência Epworth (ESE)</title>
+<link href="../Escala%20de%20sonolência%20Epworth%20(ESE)_files/medcalcstyles.css" type="text/css" rel="stylesheet">
+<meta name="description" content="Medical Calculators, Criteria Sets and Decision Trees">
+<meta name="keywords" content="PMR, Neurology, Pulmonary, Psychiatry, medcalc3000, medical, education, criteria, treecalc, decision, tree, medicine, clinical, medcalc, 3000, mdcalc, medicalc, medmath, clinicalc, clincalc, online, clinical"> 
+<meta name="author" content="Foundation Internet Services, LLC">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+</head>
+<body class="medCalcBody">
+<div id="mc3k">
+
+<script language="JavaScript1.1" type="text/javascript">
+
+
+
+var curelement;
+
+function togCB(thisid){
+thischeckbox = document.getElementById(thisid);
+if (thischeckbox.checked){ thischeckbox.checked = false; }
+else { thischeckbox.checked = true; }
+EpworthSleepScale_fx();
+}
+
+function setRB(thisid){
+document.getElementById(thisid).checked = true;
+EpworthSleepScale_fx();
+}
+
+
+
+</script>
+
+
+<script language="JavaScript1.1" type="text/javascript">
+
+
+
+
+
+
+
+
+var calctxt = '';
+var xmltxt = '';
+var xmlresult = '';
+var htmtxt = '';
+var postNow = false;
+var printing = false;
+var rbchk = false;
+
+
+function EpworthSleepScale_fx() {
+with(document.EpworthSleepScale_form){
+
+Score = 0.0;
+doCalc = true;
+
+rbchk = false;
+if (cc1[0].checked){
+rbchk = true; Score = Score + 0; 
+}
+if (cc1[1].checked){
+rbchk = true; Score = Score + 1; 
+}
+if (cc1[2].checked){
+rbchk = true; Score = Score + 2; 
+}
+if (cc1[3].checked){
+rbchk = true; Score = Score + 3; 
+}
+if (!rbchk) doCalc = false;
+rbchk = false;
+if (cc2[0].checked){
+rbchk = true; Score = Score + 0; 
+}
+if (cc2[1].checked){
+rbchk = true; Score = Score + 1; 
+}
+if (cc2[2].checked){
+rbchk = true; Score = Score + 2; 
+}
+if (cc2[3].checked){
+rbchk = true; Score = Score + 3; 
+}
+if (!rbchk) doCalc = false;
+rbchk = false;
+if (cc3[0].checked){
+rbchk = true; Score = Score + 0; 
+}
+if (cc3[1].checked){
+rbchk = true; Score = Score + 1; 
+}
+if (cc3[2].checked){
+rbchk = true; Score = Score + 2; 
+}
+if (cc3[3].checked){
+rbchk = true; Score = Score + 3; 
+}
+if (!rbchk) doCalc = false;
+rbchk = false;
+if (cc4[0].checked){
+rbchk = true; Score = Score + 0; 
+}
+if (cc4[1].checked){
+rbchk = true; Score = Score + 1; 
+}
+if (cc4[2].checked){
+rbchk = true; Score = Score + 2; 
+}
+if (cc4[3].checked){
+rbchk = true; Score = Score + 3; 
+}
+if (!rbchk) doCalc = false;
+rbchk = false;
+if (cc5[0].checked){
+rbchk = true; Score = Score + 0; 
+}
+if (cc5[1].checked){
+rbchk = true; Score = Score + 1; 
+}
+if (cc5[2].checked){
+rbchk = true; Score = Score + 2; 
+}
+if (cc5[3].checked){
+rbchk = true; Score = Score + 3; 
+}
+if (!rbchk) doCalc = false;
+rbchk = false;
+if (cc6[0].checked){
+rbchk = true; Score = Score + 0; 
+}
+if (cc6[1].checked){
+rbchk = true; Score = Score + 1; 
+}
+if (cc6[2].checked){
+rbchk = true; Score = Score + 2; 
+}
+if (cc6[3].checked){
+rbchk = true; Score = Score + 3; 
+}
+if (!rbchk) doCalc = false;
+rbchk = false;
+if (cc7[0].checked){
+rbchk = true; Score = Score + 0; 
+}
+if (cc7[1].checked){
+rbchk = true; Score = Score + 1; 
+}
+if (cc7[2].checked){
+rbchk = true; Score = Score + 2; 
+}
+if (cc7[3].checked){
+rbchk = true; Score = Score + 3; 
+}
+if (!rbchk) doCalc = false;
+rbchk = false;
+if (cc8[0].checked){
+rbchk = true; Score = Score + 0; 
+}
+if (cc8[1].checked){
+rbchk = true; Score = Score + 1; 
+}
+if (cc8[2].checked){
+rbchk = true; Score = Score + 2; 
+}
+if (cc8[3].checked){
+rbchk = true; Score = Score + 3; 
+}
+if (!rbchk) doCalc = false;
+if (doCalc){
+cctotal.value = Score;
+if (cctotal.value == 'NaN') cctotal.value = '';
+}
+else{
+Score = null;
+cctotal.value = '';
+if (typeof rrclr == 'function') { rrclr(); };
+document.EpworthSleepScale_form.cctotal.value = '';
+}
+
+
+
+
+if (doCalc){
+rrclr();
+if ((Score >= 1) && (Score <= 6)){ document.getElementById('rr1_1').bgColor = '#8ab2be';
+}
+if ((Score >= 7) && (Score <= 8)){ document.getElementById('rr1_2').bgColor = '#8ab2be';
+}
+if ((Score >= 9) && (Score <= 24)){ document.getElementById('rr1_3').bgColor = '#8ab2be';
+}
+
+
+}
+}
+}
+
+
+
+
+function rrclr(){
+document.getElementById('rr1_1').bgColor = '';
+document.getElementById('rr1_2').bgColor = '';
+document.getElementById('rr1_3').bgColor = '';
+}
+
+
+
+
+
+</script>
+
+
+
+<form name="EpworthSleepScale_form" id="EpworthSleepScale_form" action="https://www.msdmanuals.com/medical-calculators/EpworthSleepScale-pt.htm" onsubmit="return false;" onreset="rrclr(); ">
+<table width="100%" cellpadding="4" cellspacing="0" summary="EBMcalc Table">
+<tbody><tr><td class="medCalcTitleBox" width="1%"><br></td>
+<td class="medCalcTitleBox">
+<span class="medCalcFontTitleBox">
+
+ 
+Escala de sonolência Epworth (ESE)
+</span></td></tr></tbody></table><br>&nbsp;<br>
+<div id="calc_main">
+<div id="calc_input">
+<center>
+<table cellpadding="3" cellspacing="0" summary="EBMcalc Table">
+<tbody><tr><td colspan="3" align="left"><span class="medCalcFontCCTabBold">Classificar as situações associadas à sonolência:<br>&nbsp;<br></span></td></tr>
+
+<tr><td colspan="3" align="left"><span class="medCalcFontCCTabBold">Sentar e ler </span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel1" name="cc1" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel1&#39;);">Nenhuma chance de cochilar (0 pontos)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel2" name="cc1" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel2&#39;);">Leve chance de cochilar (1 ponto)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel3" name="cc1" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel3&#39;);">Chance moderada de cochilar (2 pontos)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel4" name="cc1" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel4&#39;);">Alta chance de cochilar (3 pontos)</span></td></tr>
+<tr><td colspan="3" align="left"><span class="medCalcFontCCTabBold">Assistir à TV </span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel5" name="cc2" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel5&#39;);">Nenhuma chance de cochilar (0 pontos)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel6" name="cc2" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel6&#39;);">Leve chance de cochilar (1 ponto)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel7" name="cc2" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel7&#39;);">Chance moderada de cochilar (2 pontos)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel8" name="cc2" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel8&#39;);">Alta chance de cochilar (3 pontos)</span></td></tr>
+<tr><td colspan="3" align="left"><span class="medCalcFontCCTabBold">Ficar sentado, sem fazer nada, em um local público </span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel9" name="cc3" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel9&#39;);">Nenhuma chance de cochilar (0 pontos)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel10" name="cc3" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel10&#39;);">Leve chance de cochilar (1 ponto)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel11" name="cc3" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel11&#39;);">Chance moderada de cochilar (2 pontos)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel12" name="cc3" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel12&#39;);">Alta chance de cochilar (3 pontos)</span></td></tr>
+<tr><td colspan="3" align="left"><span class="medCalcFontCCTabBold">Ficar sentado, por uma hora, como passageiro em um carro </span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel13" name="cc4" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel13&#39;);">Nenhuma chance de cochilar (0 pontos)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel14" name="cc4" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel14&#39;);">Leve chance de cochilar (1 ponto)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel15" name="cc4" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel15&#39;);">Chance moderada de cochilar (2 pontos)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel16" name="cc4" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel16&#39;);">Alta chance de cochilar (3 pontos)</span></td></tr>
+<tr><td colspan="3" align="left"><span class="medCalcFontCCTabBold">Deitar à tarde para descansar </span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel17" name="cc5" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel17&#39;);">Nenhuma chance de cochilar (0 pontos)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel18" name="cc5" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel18&#39;);">Leve chance de cochilar (1 ponto)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel19" name="cc5" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel19&#39;);">Chance moderada de cochilar (2 pontos)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel20" name="cc5" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel20&#39;);">Alta chance de cochilar (3 pontos)</span></td></tr>
+<tr><td colspan="3" align="left"><span class="medCalcFontCCTabBold">Sentar e conversar com outra pessoa </span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel21" name="cc6" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel21&#39;);">Nenhuma chance de cochilar (0 pontos)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel22" name="cc6" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel22&#39;);">Leve chance de cochilar (1 ponto)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel23" name="cc6" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel23&#39;);">Chance moderada de cochilar (2 pontos)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel24" name="cc6" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel24&#39;);">Alta chance de cochilar (3 pontos)</span></td></tr>
+<tr><td colspan="3" align="left"><span class="medCalcFontCCTabBold">Sentar, em silêncio, depois do almoço (sem ingestão de álcool) </span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel25" name="cc7" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel25&#39;);">Nenhuma chance de cochilar (0 pontos)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel26" name="cc7" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel26&#39;);">Leve chance de cochilar (1 ponto)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel27" name="cc7" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel27&#39;);">Chance moderada de cochilar (2 pontos)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel28" name="cc7" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel28&#39;);">Alta chance de cochilar (3 pontos)</span></td></tr>
+<tr><td colspan="3" align="left"><span class="medCalcFontCCTabBold">Sentado em um carro, parado por alguns minutos por causa de trânsito </span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel29" name="cc8" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel29&#39;);">Nenhuma chance de cochilar (0 pontos)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel30" name="cc8" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel30&#39;);">Leve chance de cochilar (1 ponto)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel31" name="cc8" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel31&#39;);">Chance moderada de cochilar (2 pontos)</span></td></tr>
+<tr><td width="20"><br></td>
+<td align="right"><input type="radio" id="togel32" name="cc8" onclick="EpworthSleepScale_fx();"></td>
+<td align="left"><span class="medCalcFontOneClick" onclick="setRB(&#39;togel32&#39;);">Alta chance de cochilar (3 pontos)</span></td></tr>
+
+</tbody></table>
+
+</center>
+</div>
+<br>&nbsp;<br>
+<div id="calc_result">
+<span class="medCalcFontCCTabBold">
+Contagem de pontos, critérios totais:
+</span>
+<input type="text" size="6" name="cctotal" onfocus="blur();"><br>&nbsp;<br>
+<center><input type="reset" name="reset" value="Redefinir forma">    </center>
+<br>&nbsp;<br>
+<div id="rr1_tag">
+<table width="100%" cellpadding="4" cellspacing="0" summary="EBMcalc Table">
+<tbody><tr><td class="medCalcTitleBox" width="1%"><br></td>
+<td class="medCalcTitleBox">
+<span class="medCalcFontTitleBox">
+
+
+Interpretação de ESE
+</span></td></tr></tbody></table><br>&nbsp;<br>
+</div>
+<center>
+<table border="1" cellpadding="4" cellspacing="0" summary="RRTable">
+<tbody><tr id="rr1_1" bgcolor=""><td align="right" style="border-right: 0px;" nowrap="nowrap"><span class="medCalcFontOneBold">1 - 6 pontos:</span></td>
+<td align="left" style="border-left: 0px;"><span class="medCalcFontOne">Sono normal</span></td></tr>
+<tr id="rr1_2" bgcolor=""><td align="right" style="border-right: 0px;" nowrap="nowrap"><span class="medCalcFontOneBold">7 - 8 pontos:</span></td>
+<td align="left" style="border-left: 0px;"><span class="medCalcFontOne">Média de sonolência</span></td></tr>
+<tr id="rr1_3" bgcolor=""><td align="right" style="border-right: 0px;" nowrap="nowrap"><span class="medCalcFontOneBold">9 - 24 pontos:</span></td>
+<td align="left" style="border-left: 0px;"><span class="medCalcFontOne">Sonolência anormal (possivelmente patológica)</span></td></tr>
+
+</tbody></table>
+</center>
+<br>&nbsp;<br>
+
+</div>
+</div>
+<br>&nbsp;<br>
+
+<div id="calc_refs">
+
+
+</ol>
+</div>
+
+ 
+</form>
+<div id="calc_disclaimer"> <br>&nbsp;<br><center><br>&nbsp;<br>&nbsp;<br><table bgcolor="#cccccc" cellpadding="16" summary="EBMcalc Table"><tbody><tr><td><center><span class="medCalcFontTwo"><br>&nbsp;<br><b><u>
+    Avisos legais e isenção de responsabilidades</u></b></span></center><br>&nbsp;<br><span class="medCalcFontTwo">Todas as informações contidas aqui e produzidas pelo sistema EBMcalc são fornecidas
+apenas com propósitos educacionais. Estas informações não devem ser usadas para  
+diagnóstico ou tratamento de quaisquer problemas de saúde ou doenças.
+<b>ESTAS INFORMAÇÕES NÃO DEVEM SUBSTITUIR O JULGAMENTO CLÍNICO OU
+ORIENTAR DE ALGUMA FORMA O TRATAMENTO INDIVIDUAL DOS PACIENTES.
+</b><a href="https://www.msdmanuals.com/medical-calculators/disclaimer-pt.htm" target="_blank">Clique aqui para ver a íntegra dos avisos legais e isenção de responsabilidades.</a></span><br>&nbsp;<br><center><span class="medCalcFontTwo">© 2023 Dra. Sofia Furlan CREFITO: 3 /174857-f 
+     . Todos os direitos reservados. |RAFAEL, POLLY, LEONARDO E FELIPE. &nbsp;&nbsp; </span></center></td></tr></tbody></table></center>
+</div><script language="JavaScript1.1" type="text/javascript">
+
+
+
+
+
+
+
+
+function loadQueryParams(thisqs){
+if (thisqs) alert('Data panel values cannot be transferred to this calculator.');
+return;
+}
+
+
+
+</script>
+
+
+
+
+
+</div>
+
+
+
+
+
+</body></html>
