@@ -50,9 +50,35 @@ function validateForm(){
 
 }
 
+function validateNewslatter(){
+    console.log("validando NewsLatter")
+
+    console.log("validando NewsLatter")
+    var name = document.getElementById ("newsnome").value
+    console.log(name.length)
+    if(name.length <= 3){
+        alert("Nome Invalido") 
+        return
+
+    } 
+
+   
+    var email = document.getElementById ("newsemail").value
+    if(email.length <=3 && email.includes("@")){
+        alert("e-mail invalido") 
+        return
+    } 
+
+ 
+    
+    var finalForm = "Nome = " + name
+       finalForm += "\nEmail = " + email 
+
+
+    alert (finalForm)
 
    
 
 
-
+}
 
