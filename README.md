@@ -27,9 +27,4 @@ Nome: Rafael Felix de Brito
 RA:1111392321042
 Nome: Polly Oliveira Carvalho
 
-RA:1111392321017
-Nome: Felipe Silva Sousa
-
-RA:1111392321004
-Nome: Leonardo Barbosa da Silva
 
